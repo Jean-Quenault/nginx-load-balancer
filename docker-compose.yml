@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  webserver:
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+  
+  app:
+    image: php:7.2-apache
+    volumes:
+      - ./app:/var/www/html
+    deploy:
+      replicas: 4
