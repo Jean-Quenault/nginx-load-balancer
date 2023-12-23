@@ -1,7 +1,6 @@
+# Nginx load balancer
 
-# Docker NGINX et PHP Application
-
-Ce projet configure un environnement Docker comprenant un serveur web NGINX et une application PHP, gérée à l'aide de Docker Compose.
+Ce projet configure un environnement Docker comprenant un serveur web NGINX et une application PHP en quatres replicas avec Docker Compose.
 
 ## Prérequis
 
@@ -20,13 +19,13 @@ Le fichier `docker-compose.yml` inclut deux services :
 1. Cloner le dépôt :
 
    ```
-   git clone [URL_DU_DEPOT]
+   git clone https://github.com/Jean-Quenault/nginx-load-balancer/tree/main
    ```
 
 2. Naviguer dans le répertoire du projet :
 
    ```
-   cd [NOM_DU_REPERTOIRE]
+   cd nginx-load-balancer/
    ```
 
 ## Déploiement
@@ -37,14 +36,9 @@ Exécuter la commande suivante pour démarrer les services en utilisant Docker C
 docker-compose up -d
 ```
 
+L'application affiche ensuite l'id du conteneur solicité (par le load balancer).
+
 ## Configuration NGINX
 
 Les configurations NGINX sont stockées dans le dossier `./nginx`. Vous pouvez les modifier selon vos besoins pour gérer la manière dont NGINX traite les requêtes entrantes et les redirige vers l'application PHP.
 
-## Licence
-
-[CHOISIR LA LICENCE APPROPRIÉE]
-
-## Contact
-
-[INFORMATIONS DE CONTACT]
