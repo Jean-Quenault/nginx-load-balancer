@@ -1,44 +1,43 @@
-# Nginx load balancer
+# Nginx Load Balancer
 
-Ce projet configure un environnement Docker comprenant un serveur web NGINX et une application PHP en quatres replicas avec Docker Compose.
+This project sets up a Docker environment comprising an NGINX web server and a PHP application in four replicas using Docker Compose.
 
-## Prérequis
+## Prerequisites
 
 - Docker
 - Docker Compose
 
 ## Configuration
 
-Le fichier `docker-compose.yml` inclut deux services :
+The `docker-compose.yml` file includes two services:
 
-1. `webserver` : Un serveur web NGINX configuré pour écouter sur le port 80. Il utilise des configurations personnalisées situées dans le dossier `./nginx`.
-2. `app` : Une application PHP exécutée avec Apache, accessible via le serveur NGINX. Ce service est configuré pour démarrer avec 4 réplicas.
+1. `webserver`: An NGINX web server configured to listen on port 80. It uses custom configurations located in the `./nginx` folder.
+2. `app`: A PHP application executed with Apache, accessible via the NGINX server. This service is configured to start with 4 replicas.
 
 ## Installation
 
-1. Cloner le dépôt :
+1. Clone the repository:
 
    ```
    git clone https://github.com/Jean-Quenault/nginx-load-balancer/tree/main
    ```
 
-2. Naviguer dans le répertoire du projet :
+2. Navigate to the project directory:
 
    ```
    cd nginx-load-balancer/
    ```
 
-## Déploiement
+## Deployment
 
-Exécuter la commande suivante pour démarrer les services en utilisant Docker Compose :
+Execute the following command to start the services using Docker Compose:
 
 ```
 docker-compose up -d
 ```
 
-L'application affiche ensuite l'id du conteneur solicité (par le load balancer).
+The application then displays the ID of the requested container (by the load balancer).
 
-## Configuration NGINX
+## NGINX Configuration
 
-Les configurations NGINX sont stockées dans le dossier `./nginx`. Vous pouvez les modifier selon vos besoins pour gérer la manière dont NGINX traite les requêtes entrantes et les redirige vers l'application PHP.
-
+NGINX configurations are stored in the `./nginx` folder. You can modify them as needed to manage how NGINX handles incoming requests and redirects them to the PHP application.
